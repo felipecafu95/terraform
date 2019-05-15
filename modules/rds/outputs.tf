@@ -20,3 +20,7 @@ output "arn" {
 output "status" {
   value = "${aws_db_instance.generic_db.status}"
 }
+
+output "subnet_name" {
+  value = "${aws_db_subnet_group.db_subnet.name}"
+}

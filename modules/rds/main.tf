@@ -1,3 +1,13 @@
+resource "aws_db_subnet_group" "db_subnet" {
+  name        = "${var.subnet_db-name}"
+  subnet_ids  = ["${var.subnet_ids}"]
+  description = "${var.description}"
+
+  tags = {
+    Name = "${var.subnet_tagname}"
+  }
+}
+
 resource "aws_db_instance" "generic_db" {
   allocated_storage       = "${var.db_storage}"
   identifier              = "${var.identifier}"
@@ -7,7 +17,7 @@ resource "aws_db_instance" "generic_db" {
   instance_class          = "db.${var.instance_type}"
   name                    = "${var.db_name}"
   username                = "${var.db_username}"
-  db_subnet_group_name    = "${var.db_subnet_group_name}"
+  db_subnet_group_name    = "${aws_db_subnet_group.db_subnet.name}"
   password                = "${var.db_password}"
   backup_retention_period = "${var.backup_period}"
   parameter_group_name    = "${var.parameter_group_name}"

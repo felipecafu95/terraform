@@ -16,3 +16,7 @@ variable "copy_tags_to_snapshot" {}
 variable "monitoring_interval" {}
 variable "db_subnet_group_name" {}
 variable "skip_final_snapshot" {}
+variable "subnet_ids" { type = "list" }
+variable "subnet_db-name" {}
+variable "subnet_tagname" {}
+variable "description" {}
