@@ -1,3 +1,3 @@
-variable "key_name" {}
+variable "key_name" { default = "terraform-key"}
 
-variable "aws_ssh_key" {}
+variable "aws_ssh_key" { default = "my-aws-key" }
