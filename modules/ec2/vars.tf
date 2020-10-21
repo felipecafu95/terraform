@@ -1,4 +1,4 @@
-variable "instance_type" { default =  "t3.micro"}
+variable "instance_type" { default =  "t3a.micro"}
 variable "sg_ids" { default = "" }
 variable "subnet_id" { default = "" }
 variable "user_data" { default = "" }
