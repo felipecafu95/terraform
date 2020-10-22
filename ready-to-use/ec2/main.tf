@@ -1,5 +1,6 @@
 provider "aws" {
-  region  = "sa-east-1"
+  region  = "sa-east-1" #change to preferred region
+  profile = "aws-profile-name" # localized at ~/.aws/config
 }
 
 
