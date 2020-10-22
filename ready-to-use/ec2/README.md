@@ -27,16 +27,16 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
 ## Variables
 
-After your configured your credentials; change the `default` values in `main.tf` file
+After your configured your credentials; change the `default` values in `variables.tf` file
 
 ```
 module "ec2" {
   source = "../../modules/ec2"
 
-  key_name = module.key_pair.key_name
-  volume_size = 15
-  sg_ids = "sg-12345abcde"
-  subnet_id = "subnet-123abcd"
+  key_name      = module.key_pair.key_name
+  volume_size   = var.volume_size
+  sg_ids        = var.sg_ids
+  subnet_id     = var.subnet_id
 
 }
 ```
