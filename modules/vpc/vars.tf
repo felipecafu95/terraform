@@ -1,38 +1,35 @@
-variable "region" {}
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
 
-variable "azs" { type = "map" }
+variable "azs" {
+  type = map(string)
+  default = {
+    us-east-1 = "us-east-1a,us-east-1b,us-east-1c"
+  }
+}
+variable "create_vpc" {
+  default = true
+}
 
-variable "vpc_cidr" {}
+variable "single_nat_gateway" {
+  default = true
+}
 
-variable "vpc_name" {}
+variable "eks_subnet" {
+  default = false
+}
 
-variable "igw_name" {}
+variable "vpc_cidr" {
+  default = "10.0.0.0/16"
+}
 
-variable "rt_name" {}
+variable "vpc_name" {
+  default = "Terraform"
+}
 
-variable "cidr_igw" {}
-
-variable "pvt_subnet_name" {}
-
-variable "pub_subnet_name" {}
-
-variable "db_pvt_subnet_name" {}
-
-variable "ngw_name" {}
-
-variable "rtb_pub_name" {}
-
-variable "rtb_pub_cidr" {}
-
-variable "rtb_pvt_cidr" {}
-
-variable "rtb_pvt_name" {}
-
-variable "rtb_pvt-db_name" {}
-
-variable "rtb_pvt-db_cidr" {}
-
-
-# variable "peering_routes" {}
-
-# variable "peering_id" {}
+variable "project" {
+  type    = string
+  default = "Lab"
+}
