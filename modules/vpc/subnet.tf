@@ -68,7 +68,7 @@ resource "aws_subnet" "eks_public" {
   vpc_id                  = aws_vpc.main.id
   availability_zone       = element(split(",", lookup(var.azs, var.region)), count.index)
   cidr_block              = cidrsubnet(var.vpc_cidr, 3, count.index + 4)
-  map_public_ip_on_launch = "true"
+  map_public_ip_on_launch = "false"
 
   tags = {
     Name    = "EKS-Public-0${count.index + 1}"
