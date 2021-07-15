@@ -7,7 +7,7 @@ provider "aws" {
     }
   }
   region  = "us-east-1"      #change to preferred region
-  profile = "vrtomorrowland" # localized at ~/.aws/config
+  profile = "aws-profile-name" # localized at ~/.aws/config
 }
 
 module "vpc" {
